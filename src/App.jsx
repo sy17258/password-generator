@@ -39,7 +39,13 @@ function App() {
 
      <div className="flex gap-2 justify-center">
       <input type="text" value={password} className="w-[600px] py-2 px-4 mb-4 border rounded-md " placeholder="Password" />
-      <button onClick={passwordGenerator} className="bg-blue-500 py-2 px-4 mb-4 border rounded-md ">copy</button>
+      <button 
+        onClick={() => {
+          navigator.clipboard.writeText(password);
+        }} 
+        className="bg-blue-500 py-2 px-4 mb-4 border rounded-md text-white hover:bg-blue-600">
+        Copy
+      </button>
       </div>
       
       <div>
