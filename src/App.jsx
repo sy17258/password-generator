@@ -33,26 +33,37 @@ function App() {
   return (
     <WavyBackground className="w-full p-2 justify-center">
     <div className='h-full p-5 bg-gray-800 rounded-md bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-30 border border-gray-100'>
-      <div className="text-2xl text-center mb-4 text-red-500">
+      <div id="title" className="">
         Password Generator
       </div>
 
-     <div className="flex gap-2 justify-center">
-      <input type="text" value={password} className="w-[600px] py-2 px-4 mb-4 border rounded-md " placeholder="Password" />
+     <div className="flex flex-col sm:flex-row gap-2 justify-center w-full">
+      <input 
+        type="text" 
+        value={password} 
+        className="w-full sm:w-[400px] md:w-[600px] py-2 px-4 mb-2 sm:mb-4 border rounded-md" 
+        placeholder="Password" 
+      />
       <button 
         onClick={() => {
           navigator.clipboard.writeText(password);
         }} 
-        className="bg-blue-500 py-2 px-4 mb-4 border rounded-md text-white hover:bg-blue-600">
+        className="bg-blue-500 py-2 px-4 mb-4 border rounded-md text-white hover:bg-blue-600 w-full sm:w-auto">
         Copy
       </button>
       </div>
       
       <div>
-      <input type="range" min={6}max={20} value={len} className="" onChange={
-        (e)=>{
-          setLen(e.target.value)
-        }}/>
+      <input 
+            type="range" 
+            min={6} 
+            max={20} 
+            value={len} 
+            className=" h-2 bg-gray-300 rounded-lg appearance-none cursor-pointer accent-blue-500" 
+            onChange={(e) => {
+              setLen(e.target.value)
+            }}
+          />
 
       <label className='m-2'>length: {len}</label>
       <label className='m-2'>Add Numbers:</label>
@@ -60,7 +71,7 @@ function App() {
                 setNum(prev => !prev)
               }}
             />
-            <label htmlFor="numberInput" className="mr-4">Include Numbers</label>
+            <label htmlFor="numberInput" className="mr-4">add character</label>
             
             <input 
               type="checkbox" 
