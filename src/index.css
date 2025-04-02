@@ -1,3 +1,19 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+#title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: transparent;
+  background: url(https://wallpapercat.com/w/full/9/3/d/795212-2880x1800-desktop-hd-gradient-background.jpg)center;
+  background-size: cover;
+  background-clip: text;
+  -webkit-background-clip: text;
+  animation: animate 10s linear infinite;
+}
+@keyframes animate {
+  to {
+    background-position-x: 600px;
+  }
+}
